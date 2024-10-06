@@ -1,6 +1,6 @@
 // Quantumult X Rewrite Script
 // [rewrite_local]
-// ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=batchReceiveXFCoupon url script-response-body jd_modify_response.js
+// ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=queryMultiTabFloors url script-response-body jd_modify_response.js
 
 // [mitm]
 // hostname = api.m.jd.com
