@@ -15,6 +15,6 @@ let decodedToken = decodeURIComponent(token);
 $clipboard = decodedToken;
 
 // 发送通知
-$notify('Token 提取', '获取到的 token:', decodedToken);
+$notify('百事TOKEN获取成功', '获取到的token:', decodedToken);
 
 $done({});
