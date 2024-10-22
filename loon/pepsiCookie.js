@@ -8,7 +8,7 @@ let token = tokenMatch ? tokenMatch[1] : '未找到 token';
 // URL 解码
 let decodedToken = decodeURIComponent(token);
 
-yanzi.msg(cookieName, `url`, url)
+// yanzi.msg(cookieName, `url`, url)
 
 // 如果获取到了 Cookie
 if (decodedToken) {
