@@ -7,7 +7,7 @@ let mobile = '未找到 mobile 参数';
 // yanzi.msg(cookieName, `working`, ``)
 
 yanzi.msg(cookieName, `body`, body)
-yanzi.log(`[${cookieName}] , body: ${body}`)
+yanzi.log(`body: ${body}`)
 
 if (body) {
     // 解析 body 中的 mobile 参数
@@ -22,7 +22,7 @@ if (token) {
     // 发送通知，包含 token 和 mobile
     // $notify(cookieName, '获取token成功:', mobile + "----" + token);
     yanzi.msg(cookieName, `获取token成功`, mobile + "----" + token)
-    yanzi.log(cookieName,  mobile + "----" + token)
+    yanzi.log(mobile + "----" + token)
     // 保存Cookie到本地存储（可选）
     // $persistentStore.write(cookie, cookieName);
 } else {
