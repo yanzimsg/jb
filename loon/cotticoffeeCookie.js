@@ -4,7 +4,7 @@ const token = $request.headers['token']
 const body = $request.body;
 let mobile = '未找到 mobile 参数';
 
-yanzi.msg(cookieName, `working`, ``)
+// yanzi.msg(cookieName, `working`, ``)
 
 
 if (body) {
@@ -18,8 +18,8 @@ if (body) {
 // 如果获取到了 Cookie
 if (token) {
     // 发送通知，包含 token 和 mobile
-    $notify('库迪Cookie 获取成功', 'token:', mobile + "----" + token);
-
+    // $notify(cookieName, '获取token成功:', mobile + "----" + token);
+    yanzi.msg(cookieName, `获取token成功`, mobile + "----" + token)
     // 保存Cookie到本地存储（可选）
     // $persistentStore.write(cookie, cookieName);
 } else {
