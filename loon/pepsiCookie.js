@@ -16,7 +16,7 @@ if (decodedToken) {
     // $notify(cookieName, '获取token成功:', mobile + "----" + token);
   
     yanzi.msg(cookieName, `获取token成功`, decodedToken)
-    yanzi.log("获取到完整CK：" + "\n\n" + "百事串码+" + decodedToken)
+    yanzi.log("获取到完整CK：" + "\n\n" + "百事串码+" + decodedToken + "\n")
   
     // 保存Cookie到本地存储（可选）
     // $persistentStore.write(cookie, cookieName);
