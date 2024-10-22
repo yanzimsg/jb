@@ -2,12 +2,12 @@ const cookieName = '库迪咖啡'
 const yanzi = init()
 const token = $request.headers['token']
 const body = $request.body;
-let mobile = '未找到 mobile 参数';
+let mobile = 'phone';
 
 // yanzi.msg(cookieName, `working`, ``)
 
-yanzi.msg(cookieName, `body`, body)
-yanzi.log(`body: ${body}`)
+// yanzi.msg(cookieName, `body`, body)
+// yanzi.log(`body: ${body}`)
 
 if (body) {
     // 解析 body 中的 mobile 参数
