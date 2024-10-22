@@ -22,7 +22,7 @@ if (token) {
     // 发送通知，包含 token 和 mobile
     // $notify(cookieName, '获取token成功:', mobile + "----" + token);
     yanzi.msg(cookieName, `获取token成功`, mobile + "----" + token)
-    yanzi.log(mobile + "----" + token)
+    yanzi.log("获取到完整CK：" + "\n\n" + mobile + "----" + token)
     // 保存Cookie到本地存储（可选）
     // $persistentStore.write(cookie, cookieName);
 } else {
