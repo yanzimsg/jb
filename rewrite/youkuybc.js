@@ -1,5 +1,5 @@
 // 优酷云包场显示可领取 qx重写
-
+$notify("test!!!");
 let body = $response.body;
 $notify(body);
 // 获取当前时间戳的13位数
