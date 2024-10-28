@@ -1,4 +1,4 @@
-# 优酷云包场显示可领取 qx重写
+// 优酷云包场显示可领取 qx重写
 
 let body = $response.body;
 $notify(body);
