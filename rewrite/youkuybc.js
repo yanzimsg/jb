@@ -15,4 +15,4 @@ let modifiedBody = body
     .replace(/"totalFinishCount":"0","unitFinishCount":"0"/g, '"totalFinishCount":"1","unitFinishCount":"1"')
     .replace(/"loginLimit":"1"/g, `"loginLimit":"1","lastFinishTime":"${currentTimeStamp}"`);
 $notify(modifiedBody);
-$done({modifiedBody });
+$done({body:modifiedBody});
