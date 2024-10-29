@@ -1,58 +1,18 @@
-const cookieName = '优酷云包场'
-const yanzi = init()
-// const token = $request.headers['token']
-const body = $response.body;
+$notification.post('优酷云包场', '修改返回', '')
 
-yanzi.msg(cookieName, `test`, "test")
-yanzi.log("获取到完整CK：" + body)
+let currentTimeStamp = Date.now();
 
+let body = $response.body;
+// 添加 lastFinishTime 参数
+let modifiedBody = body
+    .replace(/"hasSeat":false/g, '"hasSeat":true')
+    .replace(/"hasSeat":"false"/g, '"hasSeat":"true"')
+    .replace(/TASK_NOT_FINISH/g, 'TASK_FINISHED')
+    .replace(/userState":"\d"/g, 'userState":"3"')
+    .replace(/unitReportCount":"\d"/g, 'unitReportCount":"10"')
+    .replace(/"totalFinishCount":"0","unitFinishCount":"0"/g, '"totalFinishCount":"1","unitFinishCount":"1"')
+    .replace(/"loginLimit":"1"/g, `"loginLimit":"1","lastFinishTime":"${currentTimeStamp}"`);
+// $notify(modifiedBody);
 
-
-
-
-function init() {
-  isSurge = () => {
-    return undefined === this.$httpClient ? false : true
-  }
-  isQuanX = () => {
-    return undefined === this.$task ? false : true
-  }
-  getdata = (key) => {
-    if (isSurge()) return $persistentStore.read(key)
-    if (isQuanX()) return $prefs.valueForKey(key)
-  }
-  setdata = (key, val) => {
-    if (isSurge()) return $persistentStore.write(key, val)
-    if (isQuanX()) return $prefs.setValueForKey(key, val)
-  }
-  msg = (title, subtitle, body) => {
-    if (isSurge()) $notification.post(title, subtitle, body)
-    if (isQuanX()) $notify(title, subtitle, body)
-  }
-  log = (message) => console.log(message)
-  get = (url, cb) => {
-    if (isSurge()) {
-      $httpClient.get(url, cb)
-    }
-    if (isQuanX()) {
-      url.method = 'GET'
-      $task.fetch(url).then((resp) => cb(null, {}, resp.body))
-    }
-  }
-  post = (url, cb) => {
-    if (isSurge()) {
-      $httpClient.post(url, cb)
-    }
-    if (isQuanX()) {
-      url.method = 'POST'
-      $task.fetch(url).then((resp) => cb(null, {}, resp.body))
-    }
-  }
-  done = (value = {}) => {
-    $done(value)
-  }
-  return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done }
-}
-
-
-$done({});
+console.log(modifiedBody)
+$done({body:modifiedBody});
