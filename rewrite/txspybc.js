@@ -8,5 +8,5 @@ let modifiedBody = body
     // 新增的替换操作
     .replace(/"can_receive":0/g, '"can_receive":1') // 将 "can_receive":0 改为 "can_receive":1
     .replace(/"reason":\d+/g, '"reason":0'); 
-$notify(modifiedBody);
+//$notify(modifiedBody);
 $done({body:modifiedBody});
