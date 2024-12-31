@@ -1,7 +1,10 @@
 let token = $request.headers['token'];
 let body = $request.body;
-$notify('test', 'test token:', $request);
-// 发送通知
-$notify('库迪TOKEN获取成功', '库迪token:', token + "\n" + body);
+if (body) {
+    $notify('cotti-reqBody', 'body:', body);
+}
+if (token){
+  $notify('库迪TOKEN获取成功', '库迪token:', "phone----" + token);
+}
 
 $done({});
