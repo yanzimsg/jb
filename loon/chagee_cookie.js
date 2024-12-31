@@ -10,7 +10,7 @@ if (body) {
     const userToken = bodyObj.userToken;
 	if (userToken && userId && userMobile) {
         $notification.post(cookieName, '获取Cookie成功', '')
-        console.log(cookieName +"获取到完整CK：" + "\n\n\n\n" + userMobile + "----" + userId + "----"+ userToken + "----电脑抓key和iv \n")
+        console.log(cookieName +"获取到完整CK：" + "\n\n\n\n" + userMobile + "----" + userId + "----"+ userToken + "----\n")
       
         // 保存Cookie到本地存储（可选）
         // $persistentStore.write(cookie, cookieName);
