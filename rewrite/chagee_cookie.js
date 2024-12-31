@@ -10,7 +10,7 @@ if (body) {
     const userToken = bodyObj.userToken;
 	if (userToken && userId && userMobile) {
         //$notification.post(cookieName, '获取Cookie成功', '')
-        $notify('qmaiTOKEN获取成功', 'qmaiToken', userMobile + "----" + userId + "----"+ userToken + "----");
+        $notify('qmai', 'TOKEN获取成功', userMobile + "----" + userId + "----"+ userToken + "----");
         //console.log(cookieName +"获取到完整CK：" + "\n\n\n\n" + userMobile + "----" + userId + "----"+ userToken + "----电脑抓key和iv \n")
     }
 } 
