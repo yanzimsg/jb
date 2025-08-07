@@ -1,3 +1,7 @@
+//^https:\/\/ad-task-center\.xiaohongshu\.com\/api\/adtaskcenter\/daka\/query-task-progress url script-response-body https://raw.githubusercontent.com/yanzimsg/jb/refs/heads/main/rewrite/bsk.js
+
+
+
 let obj = {
   code: 0,
   success: true,
