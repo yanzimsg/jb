@@ -1,5 +1,6 @@
 /*
   功能：将返回数据中的 "buttonType":"数字" 改写为 "buttonType":"01"
+  买单吧
 */
 
 let body = $response.body;
