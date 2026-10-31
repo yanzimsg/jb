@@ -1,16 +1,9 @@
-// 拿到完整原始响应json
-let obj = JSON.parse($response.body);
-// 定位到 skuDetailVosList 数组
-const list = obj.rs?.serviceDetailVo?.skuDetailVosList;
-if (Array.isArray(list)) {
-  list.forEach(item => {
-    // 只在skuStatus等于5的时候才修改
-    $notify('jd', '1:', '1'+ item.skuStatus);
-    if (item.skuStatus === 5) {
-      item.skuStatus = 0;
-      
-    }
-  })
-}
-// 把修改后的整个对象重新序列化成字符串返回
-$response.body = JSON.stringify(obj);
+// 京东权益 skuStatus 修改 同优酷文本替换风格
+// $notify("京东权益重写执行");
+let body = $response.body;
+// 替换 skuStatus:5 → skuStatus:0，同时清空 skuStatusText
+let modifiedBody = body
+    .replace(/"skuStatus":5/g, '"skuStatus":0')
+    .replace(/"skuStatusText":"[^"]+"/g, '"skuStatusText":null');
+$notify(modifiedBody);
+$done({body: modifiedBody});
