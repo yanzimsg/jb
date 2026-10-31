@@ -5,6 +5,7 @@ const list = obj.rs?.serviceDetailVo?.skuDetailVosList;
 if (Array.isArray(list)) {
   list.forEach(item => {
     // 只在skuStatus等于5的时候才修改
+    $notify('jd', '1:', '1'+ item.skuStatus);
     if (item.skuStatus === 5) {
       item.skuStatus = 0;
       
