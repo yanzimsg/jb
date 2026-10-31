@@ -1,7 +1,11 @@
 let obj = JSON.parse($response.body);
-if(obj.data && Array.isArray(obj.data)){
-    obj.data.forEach(item=>{
-        if(item.skuStatus === 5) item.skuStatus = 0;
+const list = obj.rs?.serviceDetailVo?.skuDetailVosList;
+if (Array.isArray(list)) {
+    list.forEach(item => {
+        if (item.skuStatus === 5) {
+            item.skuStatus = 0;
+            item.skuStatusText = null;
+        }
     })
 }
 $response.body = JSON.stringify(obj);
