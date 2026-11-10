@@ -4,5 +4,5 @@ let body = $response.body;
 // 替换 skuStatus:5 → skuStatus:0，同时清空 skuStatusText
 let modifiedBody = body
     .replace(/"skuStatus":5/g, '"skuStatus":0');
-$notify(modifiedBody);
+// $notify(modifiedBody);
 $done({body: modifiedBody});
